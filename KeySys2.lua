@@ -64,25 +64,42 @@ local Window = Rayfield:CreateWindow({
        Key = {"check2"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
     }
  })
- local CheckTab = Window:CreateTab("Main", 4483362458)
- local HelpTab = Window:CreateTab("Help", 4483362458)
+ local CheckTab = Window:CreateTab("Main", 4483362458) -- Title, Image
 
-local Button = HelpTab:CreateButton({
-    Name = "@TwoHubs--Telegram",
-    Callback = function()
-       NektoHub()
+
+
+ --local Button = CheckTab:CreateButton({
+  --  Name = "Start Nekto Hub",
+  --  Callback = function()
+ --      NektoHub()
+ --   end,
+ --})  
+ --local Button = CheckTab:CreateButton({
+  --  Name = "Start Zov Hub",
+   -- Callback = function()
+    --   ZovHub()
+   -- end,
+ --})
+
+
+ local Input = CheckTab:CreateInput({
+    Name = "Enter Key here",
+    PlaceholderText = "Enter Key",
+    RemoveTextAfterFocusLost = false,
+    Callback = function(Text)
+    -- The function that takes place when the input is changed
+    -- The variable (Text) is a string for the value in the text box
     end,
  })
+ local Button = CheckTab:CreateButton({
+    Name = "Check Key",
+    Callback = function()
+        if _G.KeyInput == _G.Key then
+            NektoHub()
+            else
+                game.Players.LocalPlayer:Kick("Invalid key!")
+            end
+            
 
- local Button = CheckTab:CreateButton({
-    Name = "Start Nekto Hub",
-    Callback = function()
-       NektoHub()
-    end,
- })  
- local Button = CheckTab:CreateButton({
-    Name = "Start Zov Hub",
-    Callback = function()
-       ZovHub()
     end,
  })
