@@ -3,7 +3,6 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 function NektoHub()
     repeat task.wait() until game:IsLoaded()
-    local TablePlace = "Residence Massacre"
         game:GetService("StarterGui"):SetCore("SendNotification",{
             Title = "Loading...", -- Required
             Text = "Wait...", -- Required
@@ -11,17 +10,16 @@ function NektoHub()
             Duration = 15
         })
     
-        if table.find(TablePlace) then
+        if _G.KeyInput == _G.Key then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/werumZov/Nektohub/refs/heads/zovchik/NektoHub.lua"))()   
      
         
         else
-            game.Players.LocalPlayer:Kick("not Support")
+            game.Players.LocalPlayer:Kick("Invalid key!")
         end
     end
     function ZovHub()
         repeat task.wait() until game:IsLoaded()
-        local TablePlace = "Residence Massacre"
             game:GetService("StarterGui"):SetCore("SendNotification",{
                 Title = "Loading...", -- Required
                 Text = "Wait...", -- Required
@@ -29,19 +27,21 @@ function NektoHub()
                 Duration = 15
             })
         
-            if table.find(TablePlace) then
+            if _G.KeyInput == _G.Key then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/werumZov/Nektohub/refs/heads/zovchik/ZovHub.lua"))()   
          
             
             else
-                game.Players.LocalPlayer:Kick("not Support")
+                game.Players.LocalPlayer:Kick("Invalid key!")
             end
         end
 
+_G.Key = "NektoHub"
+_G.KeyInput = 'string'
 
 local Window = Rayfield:CreateWindow({
     Name = "KeySystem 2.0",
-    LoadingTitle = "Welcome!",
+    LoadingTitle = "Loading",
     LoadingSubtitle = "by werumZov",
     ConfigurationSaving = {
        Enabled = true,
@@ -65,7 +65,15 @@ local Window = Rayfield:CreateWindow({
     }
  })
  local CheckTab = Window:CreateTab("Main", 4483362458)
- local CheckTab = Window:CreateTab("XD", 4483362458)-- Title, Image
+ local HelpTab = Window:CreateTab("Help", 4483362458)
+
+local Button = HelpTab:CreateButton({
+    Name = "@TwoHubs--Telegram",
+    Callback = function()
+       NektoHub()
+    end,
+ })
+
  local Button = CheckTab:CreateButton({
     Name = "Start Nekto Hub",
     Callback = function()
