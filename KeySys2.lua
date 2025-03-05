@@ -64,7 +64,8 @@ local Window = Rayfield:CreateWindow({
        Key = {"check2"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
     }
  })
- local CheckTab = Window:CreateTab("Main", 4483362458) -- Title, Image
+ local CheckTab = Window:CreateTab("Main", 4483362458)
+local HelpTab = Window:CreateTab("Help", 4483362458)-- Title, Image
 
 
 
@@ -83,12 +84,11 @@ local Window = Rayfield:CreateWindow({
 
 
  local Input = CheckTab:CreateInput({
-    Name = "Enter Key here",
+    Name = "Enter Key",
     PlaceholderText = "Enter Key",
     RemoveTextAfterFocusLost = false,
-    Callback = function(Text)
-    -- The function that takes place when the input is changed
-    -- The variable (Text) is a string for the value in the text box
+    Callback = function(Value)
+      _G.KeyInput = Value
     end,
  })
  local Button = CheckTab:CreateButton({
@@ -99,6 +99,21 @@ local Window = Rayfield:CreateWindow({
             else
                 game.Players.LocalPlayer:Kick("Invalid key!")
             end
+            
+
+    end,
+ })
+
+
+
+
+
+
+
+ local Button = HelpTab:CreateButton({
+    Name = "@TwoHubs--Telegram",
+    Callback = function()
+
             
 
     end,
