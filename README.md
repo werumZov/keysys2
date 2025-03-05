@@ -10,4 +10,4 @@ try use a KeySystem 1.0: loadstring(game:HttpGet("https://raw.githubusercontent.
 
 
 
-*pls check this telegram channel for information: htttps://t.me/TwoHubs*
+*pls check this telegram channel for information: https://t.me/TwoHubs*
