@@ -1,7 +1,7 @@
-# KeySystem 2.0
-another way to get key for my script!
-
-
-# About Updates
 > ![CAUTION]
+> # About Updates
 > This keysystem dont updates anymore
+
+
+# KeySystem 2.0
+Another way to get key
