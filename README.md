@@ -2,6 +2,6 @@
 another way to get key for my script!
 
 
+# About Updates
 > ![CAUTION]
-> # About Updates
 > This keysystem dont updates anymore
